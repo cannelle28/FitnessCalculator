@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="CalculatorApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CalculatorApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False"
+               CompactPaneLength="100" OpenPaneLength="300">
+        <SplitView.Pane>
+            <StackPanel Background="#FF494B4E" BorderThickness="2" BorderBrush="Black">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="100" Height="118" Background="Transparent" FontSize="24" Click="HamburgerButton_Click" />
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE80F;"
+                    Width="100" Height="100" FontSize="24" Background="Transparent"/>
+                    <TextBlock Text="Home Page" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton2" 
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="BMI" Click="MenuButton2_Click" />
+                    <TextBlock Text="Body Mass Index" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton3" 
+                        Width="100" Height="100" Background="Transparent" Content="BMR" FontSize="24" Click="MenuButton3_Click"/>
+                    <TextBlock Text="Basal Metabolic Rate" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton4" 
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="WHR" Click="MenuButton4_Click"/>
+                    <TextBlock Text="Waist-hip ratio" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton5"
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="IBW" Click="MenuButton5_Click"/>
+                    <TextBlock Text="Ideal body weight" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/mainPageCanvas.jpg"/>
+                </Grid.Background>
+                <TextBlock x:Name="textBlock"  TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Fitness Calculator" Height="125" Width="1180" FontSize="80" VerticalAlignment="Top" FontWeight="Bold"/>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</Page>

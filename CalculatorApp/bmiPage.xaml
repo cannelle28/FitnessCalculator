@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="CalculatorApp.bmiPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CalculatorApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False"
+               CompactPaneLength="100" OpenPaneLength="300">
+        <SplitView.Pane>
+            <StackPanel Background="#FF494B4E" BorderThickness="2" BorderBrush="Black">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="100" Height="118" Background="Transparent" FontSize="24" Click="HamburgerButton_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE80F;"
+                    Width="100" Height="100" FontSize="24" Background="Transparent" Click="MenuButton1_Click"/>
+                    <TextBlock Text="Home Page" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton2" 
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="BMI" />
+                    <TextBlock Text="Body Mass Index" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton3" 
+                        Width="100" Height="100" Background="Transparent" Content="BMR" FontSize="24" Click="MenuButton3_Click"/>
+                    <TextBlock Text="Basal Metabolic Rate" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton4" 
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="WHR" Click="MenuButton4_Click_1"/>
+                    <TextBlock Text="Waist-hip ratio" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton5"
+                        Width="100" Height="100" Background="Transparent" FontSize="24" Content="IBW" Click="MenuButton5_Click"/>
+                    <TextBlock Text="Ideal body weight" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid Background="LightSeaGreen">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Canvas Background="#FF0A9093"/>
+                <TextBox x:Name="getWeightBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="445,90,0,0" TextChanged="getWeightBox_TextChanged" Grid.Row="1" Height="50" Width="80" FontSize="30" MaxLength="3"/>
+                <TextBox x:Name="getHeigtBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="445,170,0,0" TextChanged="getHeigtBox_TextChanged" Grid.Row="1" Height="50" Width="80" FontSize="30" MaxLength="3"/>
+                <TextBlock x:Name="resultBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="375,295,0,0" Grid.Row="1" Height="55" Width="165" FontSize="40"/>
+                <Button x:Name="bmiResultButton" Content="Calculate!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="105,283,0,0" Click="bmiResultButton_Click" Grid.Row="1" Height="72" Width="180" FontSize="25"/>
+                <TextBlock x:Name="textBlockWeight" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="60,83,0,0" Grid.Row="1" FontSize="40">
+            <Run Text="Enter your weight: "/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter your height:" VerticalAlignment="Top" Margin="60,162,0,0" Grid.Row="1" FontSize="40"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="BMI Calculator" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="65" FontWeight="Bold"/>
+                <TextBlock x:Name="resultBox2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="60,420,0,0" Grid.Row="1" Height="60" Width="480" FontSize="20"/>
+                <Grid Margin="620,40,80,80" Grid.Row="1" Background="#FF0A9093" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left">
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Height="357" Width="441" FontSize="22" Margin="22,0,0,12" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <Run Text="The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy."/>
+                        <LineBreak/>
+                        <Run Text="The BMI calculation divides an adult's weight in kilograms by their height in metres squared. For example, A BMI of 25 means 25kg/m2."/>
+                    </TextBlock>
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" FontSize="35" Width="289" Height="55" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="131,11,0,0">
+                        <Run Text="What is BMI?"/>
+                    </TextBlock>
+                </Grid>
+                <Border BorderBrush="Black" BorderThickness="1"/>
+
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</Page>
